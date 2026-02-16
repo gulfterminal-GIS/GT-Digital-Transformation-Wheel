@@ -1,0 +1,617 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Khand", sans-serif;
+  overflow: hidden;
+  background: #333333;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Top Navigation */
+.top-nav {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+  z-index: 1000;
+}
+
+.about-us-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-us-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.about-us-btn span {
+  font-family: "Julius Sans One", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.lang-switcher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-switcher:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.lang-switcher span {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* Section Layout - Single screen, no scroll */
+.content-section {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.content-section.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+  animation: pushIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes pushIn {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.background-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Wheel Container */
+.wheel-container {
+  position: absolute;
+  width: 1400px;
+  height: 800px;
+  left: -200px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.wheel {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  transform: rotate(-162deg);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 70deg, transparent 70deg 74deg, rgba(255, 255, 255, 0.08) 74deg 142deg, transparent 142deg 146deg, rgba(255, 255, 255, 0.1) 146deg 214deg, transparent 214deg 218deg, rgba(255, 255, 255, 0.15) 218deg 286deg, transparent 286deg 290deg, rgba(255, 255, 255, 0.08) 290deg 358deg, transparent 358deg 360deg);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  -webkit-mask: radial-gradient(transparent 0, transparent 160px, black 160px, black 100%);
+  mask: radial-gradient(transparent 0, transparent 160px, black 160px, black 100%);
+}
+
+.wheel::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border-radius: 50%;
+  z-index: 5;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Wheel rotation states for each section */
+.wheel.rotate-operations {
+  transform: rotate(54deg);
+}
+
+.wheel.rotate-asset {
+  transform: rotate(-18deg);
+}
+
+.wheel.rotate-correspondence {
+  transform: rotate(-90deg);
+}
+
+.wheel.rotate-pmo {
+  transform: rotate(-162deg);
+}
+
+.wheel.rotate-archive {
+  transform: rotate(-234deg);
+}
+
+/* Pie Segment Base Structure */
+.pie-segment {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.segment-1-pie {
+  clip-path: polygon(50% 50%, 50% 0%, 78% 11%, 93% 32%, 50% 50%);
+}
+
+.segment-2-pie {
+  clip-path: polygon(50% 50%, 93% 32%, 100% 50%, 93% 68%, 78% 89%, 50% 50%);
+}
+
+.segment-3-pie {
+  clip-path: polygon(50% 50%, 78% 89%, 50% 100%, 22% 89%, 50% 50%);
+}
+
+.segment-4-pie {
+  clip-path: polygon(50% 50%, 22% 89%, 7% 68%, 0% 50%, 7% 32%, 50% 50%);
+}
+
+.segment-5-pie {
+  clip-path: polygon(50% 50%, 7% 32%, 22% 11%, 50% 0%, 50% 50%);
+}
+
+.segment-cover1,
+.segment-cover2,
+.segment-content {
+  display: none;
+}
+
+/* Active and Hover States */
+.pie-segment:hover {
+  opacity: 0.8;
+}
+
+.pie-segment.active {
+  opacity: 1;
+}
+
+.wheel.active-pmo {
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 70deg, transparent 70deg 74deg, rgba(255, 255, 255, 0.08) 74deg 142deg, transparent 142deg 146deg, rgba(255, 255, 255, 0.1) 146deg 214deg, transparent 214deg 218deg, rgba(0, 255, 213, 0.4) 218deg 286deg, transparent 286deg 290deg, rgba(255, 255, 255, 0.08) 290deg 358deg, transparent 358deg 360deg);
+  filter: drop-shadow(0px 0px 20px rgba(0, 255, 213, 0.5));
+}
+
+.wheel.active-correspondence {
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 70deg, transparent 70deg 74deg, rgba(255, 255, 255, 0.08) 74deg 142deg, transparent 142deg 146deg, rgba(0, 255, 213, 0.4) 146deg 214deg, transparent 214deg 218deg, rgba(255, 255, 255, 0.1) 218deg 286deg, transparent 286deg 290deg, rgba(255, 255, 255, 0.08) 290deg 358deg, transparent 358deg 360deg);
+  filter: drop-shadow(0px 0px 20px rgba(0, 255, 213, 0.5));
+}
+
+.wheel.active-asset {
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 70deg, transparent 70deg 74deg, rgba(0, 255, 213, 0.4) 74deg 142deg, transparent 142deg 146deg, rgba(255, 255, 255, 0.1) 146deg 214deg, transparent 214deg 218deg, rgba(255, 255, 255, 0.1) 218deg 286deg, transparent 286deg 290deg, rgba(255, 255, 255, 0.08) 290deg 358deg, transparent 358deg 360deg);
+  filter: drop-shadow(0px 0px 20px rgba(0, 255, 213, 0.5));
+}
+
+.wheel.active-operations {
+  background: conic-gradient(from 0deg, rgba(0, 255, 213, 0.4) 0deg 70deg, transparent 70deg 74deg, rgba(255, 255, 255, 0.08) 74deg 142deg, transparent 142deg 146deg, rgba(255, 255, 255, 0.1) 146deg 214deg, transparent 214deg 218deg, rgba(255, 255, 255, 0.1) 218deg 286deg, transparent 286deg 290deg, rgba(255, 255, 255, 0.08) 290deg 358deg, transparent 358deg 360deg);
+  filter: drop-shadow(0px 0px 20px rgba(0, 255, 213, 0.5));
+}
+
+.wheel.active-archive {
+  background: conic-gradient(from 0deg, rgba(255, 255, 255, 0.1) 0deg 70deg, transparent 70deg 74deg, rgba(255, 255, 255, 0.08) 74deg 142deg, transparent 142deg 146deg, rgba(255, 255, 255, 0.1) 146deg 214deg, transparent 214deg 218deg, rgba(255, 255, 255, 0.1) 218deg 286deg, transparent 286deg 290deg, rgba(0, 255, 213, 0.4) 290deg 358deg, transparent 358deg 360deg);
+  filter: drop-shadow(0px 0px 20px rgba(0, 255, 213, 0.5));
+}
+
+/* Segment Text Labels - Rotate with wheel but text stays upright */
+.segment-text {
+  position: absolute;
+  font-family: "Koulen", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  color: #FFFFFF;
+  pointer-events: none;
+  z-index: 10;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  opacity: 0.6;
+}
+
+.segment-1-pie .segment-text {
+  width: 160px;
+  top: 173px;
+  left: 565px;
+}
+
+.segment-2-pie .segment-text {
+  width: 140px;
+  top: 487px;
+  left: 666px;
+}
+
+.segment-3-pie .segment-text {
+  width: 180px;
+  top: 680px;
+  left: 400px;
+}
+
+.segment-4-pie .segment-text {
+  width: 130px;
+  top: 487px;
+  left: 134px;
+}
+
+.segment-5-pie .segment-text {
+  width: 160px;
+  top: 173px;
+  left: 235px;
+}
+
+.pie-segment.active .segment-text {
+  opacity: 1 !important;
+  text-shadow: 0px 0px 20px rgba(0, 255, 213, 0.8);
+  color: #00FFD5;
+}
+
+/* Wheel Center Circle */
+.wheel-center {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  left: 400px;
+  top: 400px;
+  transform: translate(-50%, -50%);
+  background-color: #0a0a0a;
+  border-radius: 50%;
+  z-index: 150;
+  border: 3px solid rgba(0, 255, 213, 0.5);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), inset 0 0 50px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.center-gif {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125%;
+  height: 125%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.wheel-center-text {
+  position: absolute;
+  left: 400px;
+  top: 400px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  z-index: 151;
+  pointer-events: none;
+  width: 280px;
+  text-align: center;
+}
+
+.text-digital {
+  font-family: "Inter", sans-serif;
+  font-weight: 200;
+  font-size: 44px;
+  line-height: 1;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(0, 255, 213, 0.5), 0 2px 10px rgb(0, 0, 0);
+}
+
+.text-transformation {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(0, 255, 213, 0.3), 0 2px 10px rgb(0, 0, 0);
+}
+
+.text-wheel {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1;
+  text-align: center;
+  color: #00FFD5;
+  text-shadow: 0 0 20px rgba(0, 255, 213, 0.8), 0 2px 10px rgb(0, 0, 0);
+}
+
+/* Pointer Indicators - Font Awesome icons */
+.pointer-indicator {
+  position: absolute;
+  left: 740px;
+  top: 400px;
+  transform: translateY(-50%);
+  z-index: 200;
+  pointer-events: none;
+  font-size: 40px;
+  color: #00FFD5;
+  filter: drop-shadow(0px 0px 15px rgba(0, 255, 213, 0.9));
+}
+
+.pointer-secondary {
+  left: 765px;
+  font-size: 30px;
+  opacity: 0.6;
+  filter: drop-shadow(0px 0px 10px rgba(0, 255, 213, 0.6));
+}
+
+/* Content Area */
+.content-area {
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 920px;
+  max-width: calc(100vw - 1000px);
+  min-width: 600px;
+  z-index: 3;
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
+}
+
+@media (max-width: 1800px) {
+  .content-area {
+    width: 700px;
+    max-width: calc(100vw - 900px);
+  }
+}
+@media (max-width: 1600px) {
+  .content-area {
+    width: 600px;
+    max-width: calc(100vw - 850px);
+  }
+  .content-title {
+    font-size: 60px !important;
+  }
+  .content-description {
+    font-size: 28px !important;
+  }
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.content-title {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 80px;
+  line-height: 1.1;
+  color: #00FFD5;
+  margin: 0;
+}
+
+.content-description {
+  font-family: "Khand", sans-serif;
+  font-size: 32px;
+  line-height: 1.5;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.features-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.features-title {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 40px;
+  line-height: 1;
+  color: #00FFD5;
+  margin: 0;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  font-family: "Khand", sans-serif;
+  font-size: 32px;
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+/* Buttons */
+.buttons-container {
+  display: flex;
+  gap: 40px;
+  padding: 16px 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 40px;
+  border: none;
+  border-radius: 16px;
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #FFFFFF;
+  color: #25363C;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 16px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn svg {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* Navigation Dots */
+.nav-dots {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 4;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 255, 212, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:nth-child(1) {
+  width: 20px;
+  height: 20px;
+}
+
+.dot.active {
+  background: #00FFD5;
+  border: 8px solid #FFFFFF;
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+  width: 20px;
+  height: 20px;
+}
+
+.dot:hover:not(.active) {
+  background: rgba(0, 255, 212, 0.6);
+  transform: scale(1.2);
+}
+
+.dot-spacer {
+  height: 40px;
+}
+
+.chatbot-icon {
+  width: 64px;
+  height: 64px;
+  filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
+}
+
+.chatbot-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Chatbot Bubble */
+.chatbot-bubble {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  width: 200px;
+  height: 200px;
+  z-index: 5;
+}
+
+.chatbot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 0.3));
+}
+
+.chatbot-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  font-family: "Jua", cursive;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

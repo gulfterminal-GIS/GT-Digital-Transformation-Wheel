@@ -170,8 +170,18 @@ function initializeLanguageSwitcher() {
             // Update button text
             this.querySelector('span').textContent = currentLanguage === 'en' ? 'ع' : 'EN';
             
+            // Toggle RTL class on body for layout flip
+            if (currentLanguage === 'ar') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+            
             // Update all sections content
             updateAllSectionsContent();
+            
+            // Re-apply wheel rotation for current section with new direction
+            updateActiveStates(currentSection);
         });
     }
 }
@@ -276,12 +286,8 @@ function updateSectionContent(sectionName) {
         if (contentArea) {
             if (currentLanguage === 'ar') {
                 contentArea.setAttribute('dir', 'rtl');
-                contentArea.style.textAlign = 'right';
-                console.log('Set direction to RTL');
             } else {
                 contentArea.setAttribute('dir', 'ltr');
-                contentArea.style.textAlign = 'left';
-                console.log('Set direction to LTR');
             }
         }
     } else {
@@ -293,8 +299,10 @@ function updateSectionContent(sectionName) {
 function updateActiveStates(targetSection) {
     console.log('Updating to section:', targetSection);
     
-    // Define rotation angles for each section (adjusted so active is at right/east)
-    const rotations = {
+    // Define rotation angles for each section
+    // LTR: active segment at right/east (-162° for PMO at east)
+    // RTL: active segment at left/west (18° for PMO at west)
+    const rotationsLTR = {
         'operations': 54,
         'asset': -18,
         'correspondence': -90,
@@ -302,7 +310,16 @@ function updateActiveStates(targetSection) {
         'archive': -234
     };
     
-    const currentRotation = rotations[targetSection] || -162;
+    const rotationsRTL = {
+        'operations': -126,  // 180° opposite of LTR
+        'asset': 162,
+        'correspondence': 90,
+        'pmo': 18,
+        'archive': -54
+    };
+    
+    const rotations = currentLanguage === 'ar' ? rotationsRTL : rotationsLTR;
+    const currentRotation = rotations[targetSection] || (currentLanguage === 'ar' ? 18 : -162);
     
     // Update all pie segments in all sections
     const allSegments = document.querySelectorAll('.pie-segment');
@@ -326,7 +343,10 @@ function updateActiveStates(targetSection) {
         wheel.classList.remove('rotate-pmo', 'rotate-correspondence', 'rotate-asset', 'rotate-operations', 'rotate-archive');
         wheel.classList.add(`rotate-${targetSection}`);
         
-        console.log('Wheel classes:', wheel.className);
+        // Apply rotation directly for RTL/LTR
+        wheel.style.transform = `rotate(${currentRotation}deg)`;
+        
+        console.log('Wheel rotation:', currentRotation, 'Language:', currentLanguage);
         
         // Counter-rotate text labels to keep them upright
         const segmentTexts = wheel.querySelectorAll('.segment-text');

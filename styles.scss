@@ -1,6 +1,6 @@
 // ========== SETTINGS ==========
-$outer_circle_size: 800px;
-$inner_circle_size: 320px; // 160px radius * 2
+$outer_circle_size: 50vw; // 50% of viewport width (much larger)
+$inner_circle_size: 20vw; // Proportional to outer circle (40% of outer)
 $amount_of_segments: 5;
 $text_radius_space: 120px; // Distance from outer edge to text
 
@@ -75,6 +75,32 @@ body {
     width: 100vw;
 }
 
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-screen img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
 /* Top Navigation */
 .top-nav {
     position: fixed;
@@ -139,7 +165,7 @@ body {
     font-family: 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 19px;
     line-height: 40px;
     text-align: center;
     color: #FFFFFF;
@@ -153,14 +179,13 @@ body {
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
+    transition: opacity 0s, visibility 0s;
 }
 
 .content-section.active {
     opacity: 1;
     visibility: visible;
     z-index: 1;
-    animation: pushIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes pushIn {
@@ -180,6 +205,22 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+}
+
+.content-section:not(.active) .background-image {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.content-section.active .background-image {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.content-section.exiting .background-image {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 .background-overlay {
@@ -188,14 +229,30 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+}
+
+.content-section:not(.active) .background-overlay {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.content-section.active .background-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.content-section.exiting .background-overlay {
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 /* Wheel Container */
 .wheel-container {
     position: absolute;
-    width: 1400px;
-    height: 800px;
-    left: -200px;
+    width: 87.5vw; // 1.75 times the wheel size to accommodate overflow
+    height: 50vw;
+    left: -20vw;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
@@ -229,8 +286,8 @@ body {
 .wheel::before {
     content: '';
     position: absolute;
-    width: 280px;
-    height: 280px;
+    width: 17.5vw; // 35% of outer circle
+    height: 17.5vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -398,8 +455,8 @@ body {
     font-family: 'Koulen', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
-    line-height: 38px;
+    font-size: 1.75vw;
+    line-height: 2.3vw;
     text-align: center;
     color: #FFFFFF;
     pointer-events: none;
@@ -410,33 +467,33 @@ body {
 }
 
 .segment-1-pie .segment-text {
-    width: 160px;
-    top: 173px;
-    left: 565px;
+    width: 10vw;
+    top: 21.6%;
+    left: 70.6%;
 }
 
 .segment-2-pie .segment-text {
-    width: 140px;
-    top: 487px;
-    left: 666px;
+    width: 8.75vw;
+    top: 60.9%;
+    left: 83.25%;
 }
 
 .segment-3-pie .segment-text {
-    width: 180px;
-    top: 680px;
-    left: 400px;
+    width: 11.25vw;
+    top: 85%;
+    left: 50%;
 }
 
 .segment-4-pie .segment-text {
-    width: 130px;
-    top: 487px;
-    left: 134px;
+    width: 8.125vw;
+    top: 60.9%;
+    left: 16.75%;
 }
 
 .segment-5-pie .segment-text {
-    width: 160px;
-    top: 173px;
-    left: 235px;
+    width: 10vw;
+    top: 21.6%;
+    left: 29.4%;
 }
 
 .pie-segment.active .segment-text {
@@ -448,10 +505,10 @@ body {
 /* Wheel Center Circle */
 .wheel-center {
     position: absolute;
-    width: 320px;
-    height: 320px;
-    left: 400px;
-    top: 400px;
+    width: 20vw;
+    height: 20vw;
+    left: 25vw;
+    top: 25vw;
     transform: translate(-50%, -50%);
     background-color: #0a0a0a;
     border-radius: 50%;
@@ -475,23 +532,23 @@ body {
 
 .wheel-center-text {
     position: absolute;
-    left: 400px;
-    top: 400px;
+    left: 25vw;
+    top: 25vw;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 0.3vw;
     z-index: 151;
     pointer-events: none;
-    width: 280px;
+    width: 17.5vw;
     text-align: center;
 }
 
 .text-digital {
     font-family: 'Inter', sans-serif;
     font-weight: 200;
-    font-size: 44px;
+    font-size: 2.75vw;
     line-height: 1;
     text-align: center;
     color: #FFFFFF;
@@ -501,7 +558,7 @@ body {
 .text-transformation {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125vw;
     line-height: 1;
     text-align: center;
     color: #FFFFFF;
@@ -511,7 +568,7 @@ body {
 .text-wheel {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 36px;
+    font-size: 2.25vw;
     line-height: 1;
     text-align: center;
     color: #00FFD5;
@@ -521,19 +578,19 @@ body {
 /* Pointer Indicators - Font Awesome icons */
 .pointer-indicator {
     position: absolute;
-    left: 740px;
-    top: 400px;
+    left: 46.25vw;
+    top: 25vw;
     transform: translateY(-50%);
     z-index: 200;
     pointer-events: none;
-    font-size: 40px;
+    font-size: 2.5vw;
     color: #00FFD5;
     filter: drop-shadow(0px 0px 15px rgba(0, 255, 213, 0.9));
 }
 
 .pointer-secondary {
-    left: 765px;
-    font-size: 30px;
+    left: 47.8vw;
+    font-size: 1.875vw;
     opacity: 0.6;
     filter: drop-shadow(0px 0px 10px rgba(0, 255, 213, 0.6));
 }
@@ -541,14 +598,34 @@ body {
 /* Content Area */
 .content-area {
     position: absolute;
-    right: 100px;
+    left: 50vw;
     top: 50%;
     transform: translateY(-50%);
     width: 920px;
-    max-width: calc(100vw - 1000px);
+    max-width: calc(100vw - 52vw);
     min-width: 600px;
     z-index: 3;
     filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.5));
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s ease;
+}
+
+.content-area[dir="rtl"] {
+    left: 53vw;
+}
+
+.content-section:not(.active) .content-area {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.content-section.active .content-area {
+    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.content-section.exiting .content-area {
+    transform: translateY(-150%);
+    opacity: 0;
 }
 
 @media (max-width: 1800px) {
@@ -565,7 +642,7 @@ body {
     }
     
     .content-title {
-        font-size: 60px !important;
+        font-size: 48px !important;
     }
     
     .content-description {
@@ -581,7 +658,7 @@ body {
 
 .content-title {
     font-family: 'Julius Sans One', sans-serif;
-    font-size: 80px;
+    font-size: 56px;
     line-height: 1.1;
     color: #00FFD5;
     margin: 0;
@@ -711,7 +788,8 @@ body {
 }
 
 .dot-spacer {
-    height: 40px;
+    height: -10px;
+    margin-top: -10px;
 }
 
 .chatbot-icon {
@@ -734,6 +812,16 @@ body {
     width: 200px;
     height: 200px;
     z-index: 5;
+}
+
+.hi-bubble {
+    position: absolute;
+    top: 19px;
+    right: -11px;
+    width: 80px;
+    height: auto;
+    z-index: 6;
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.4));
 }
 
 .chatbot-image {

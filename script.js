@@ -2,6 +2,32 @@
 let currentSection = 'pmo';
 let currentLanguage = 'en'; // 'en' or 'ar'
 
+// About Us content data
+const aboutUsContent = {
+    en: {
+        buttonText: "About us",
+        title: "Who we are ?",
+        description: "We are an AI-driven digital transformation company building intelligent software systems that automate processes, unlock insights, and accelerate smarter decision-making. By embedding AI at the core of every solution, we help organizations transform data into action and innovation into measurable impact.",
+        stats: [
+            { number: "20 +", label: "Active Projects" },
+            { number: "50 +", label: "Valued Clients" },
+            { number: "10 +", label: "Government Entities" },
+            { number: "15 +", label: "Strategic Alliances" }
+        ]
+    },
+    ar: {
+        buttonText: "من نحن",
+        title: "من نحن ؟",
+        description: "نحن شركة تحول رقمي مدعومة بالذكاء الاصطناعي نبني أنظمة برمجية ذكية تعمل على أتمتة العمليات وفتح الرؤى وتسريع اتخاذ القرارات الأكثر ذكاءً. من خلال دمج الذكاء الاصطناعي في صميم كل حل، نساعد المؤسسات على تحويل البيانات إلى إجراءات والابتكار إلى تأثير قابل للقياس.",
+        stats: [
+            { number: "+ 20", label: "مشاريع نشطة" },
+            { number: "+ 50", label: "عملاء موثوقون" },
+            { number: "+ 10", label: "جهات حكومية" },
+            { number: "+ 15", label: "تحالفات استراتيجية" }
+        ]
+    }
+};
+
 // Content data for both languages
 const contentData = {
     en: {
@@ -113,6 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigationDots();
     initializeLanguageSwitcher();
     initializeWheelScroll();
+    initializeAboutUs();
     
     // Set initial wheel state first
     updateActiveStates(currentSection);
@@ -120,6 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Don't call showSection on init - the first section is already active in HTML
     // Just update its content to match current language
     updateSectionContent(currentSection);
+    
+    // Initialize About Us content
+    updateAboutUsContent();
     
     // Hide loading screen after everything is loaded
     setTimeout(() => {
@@ -227,11 +257,95 @@ function initializeWheelScroll() {
     });
 }
 
+// Initialize About Us overlay
+function initializeAboutUs() {
+    const aboutUsBtn = document.querySelector('.about-us-btn');
+    const aboutUsOverlay = document.getElementById('aboutUsOverlay');
+    const aboutCloseBtn = document.getElementById('aboutCloseBtn');
+    
+    if (aboutUsBtn && aboutUsOverlay) {
+        // Open About Us overlay
+        aboutUsBtn.addEventListener('click', function() {
+            aboutUsOverlay.classList.add('active');
+        });
+        
+        // Close About Us overlay
+        if (aboutCloseBtn) {
+            aboutCloseBtn.addEventListener('click', function() {
+                aboutUsOverlay.classList.remove('active');
+            });
+        }
+        
+        // Close on overlay background click
+        aboutUsOverlay.addEventListener('click', function(e) {
+            if (e.target === aboutUsOverlay) {
+                aboutUsOverlay.classList.remove('active');
+            }
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && aboutUsOverlay.classList.contains('active')) {
+                aboutUsOverlay.classList.remove('active');
+            }
+        });
+    }
+}
+
 // Update content for all sections
 function updateAllSectionsContent() {
     // Only update the currently active section immediately
     // Other sections will be updated when they become active
     updateSectionContent(currentSection);
+    
+    // Update About Us content
+    updateAboutUsContent();
+}
+
+// Update About Us content based on language
+function updateAboutUsContent() {
+    const content = aboutUsContent[currentLanguage];
+    
+    // Update button text
+    const aboutUsBtn = document.querySelector('.about-us-btn span');
+    if (aboutUsBtn) {
+        aboutUsBtn.textContent = content.buttonText;
+    }
+    
+    // Update title
+    const aboutTitle = document.querySelector('.about-title');
+    if (aboutTitle) {
+        aboutTitle.textContent = content.title;
+    }
+    
+    // Update description
+    const aboutDescription = document.querySelector('.about-description');
+    if (aboutDescription) {
+        aboutDescription.textContent = content.description;
+    }
+    
+    // Update stats
+    const statNumbers = document.querySelectorAll('.stat-number');
+    const statLabels = document.querySelectorAll('.stat-label');
+    
+    content.stats.forEach((stat, index) => {
+        if (statNumbers[index]) {
+            statNumbers[index].textContent = stat.number;
+        }
+        if (statLabels[index]) {
+            statLabels[index].textContent = stat.label;
+        }
+    });
+    
+    // Update text direction for About Us overlay
+    const aboutContent = document.querySelector('.about-content');
+    if (aboutContent) {
+        if (currentLanguage === 'ar') {
+            aboutContent.setAttribute('dir', 'rtl');
+        } else {
+            aboutContent.setAttribute('dir', 'ltr');
+        }
+    }
 }
 
 // Navigate to a specific section

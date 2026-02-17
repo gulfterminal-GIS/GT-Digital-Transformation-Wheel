@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializePieSegments();
     initializeNavigationDots();
     initializeLanguageSwitcher();
+    initializeWheelScroll();
     
     // Set initial wheel state first
     updateActiveStates(currentSection);
@@ -184,6 +185,46 @@ function initializeLanguageSwitcher() {
             updateActiveStates(currentSection);
         });
     }
+}
+
+// Initialize wheel scroll functionality
+function initializeWheelScroll() {
+    const wheelContainers = document.querySelectorAll('.wheel-container');
+    
+    // Define section order
+    const sections = ['pmo', 'correspondence', 'asset', 'operations', 'archive'];
+    
+    let scrollTimeout;
+    
+    wheelContainers.forEach(container => {
+        container.addEventListener('wheel', function(e) {
+            e.preventDefault();
+            
+            // Clear existing timeout to debounce scroll events
+            clearTimeout(scrollTimeout);
+            
+            scrollTimeout = setTimeout(() => {
+                // Get current section index
+                const currentIndex = sections.indexOf(currentSection);
+                let nextIndex;
+                
+                // Determine scroll direction
+                if (e.deltaY > 0) {
+                    // Scroll down - next section
+                    nextIndex = (currentIndex + 1) % sections.length;
+                } else {
+                    // Scroll up - previous section
+                    nextIndex = (currentIndex - 1 + sections.length) % sections.length;
+                }
+                
+                const nextSection = sections[nextIndex];
+                
+                if (nextSection !== currentSection) {
+                    navigateToSection(nextSection);
+                }
+            }, 100); // Debounce delay
+        }, { passive: false });
+    });
 }
 
 // Update content for all sections

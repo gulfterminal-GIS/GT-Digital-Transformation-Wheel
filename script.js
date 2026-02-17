@@ -34,6 +34,7 @@ const contentData = {
         pmo: {
             title: "Qarar Project Management (Qarar PMO)",
             description: "An advanced central system designed to enable leaders and project managers to plan, monitor, and make data-driven decisions. It aims to unify methodologies and ensure projects are completed within the set timeframe and budget.",
+            featuresTitle: "Key features",
             features: [
                 "1. Interactive Dashboards  -  2. Resource Management  -  3. Risk & Issue Tracking",
                 "4. Gantt Charts  -  5. AI Smart Summarization  -  6. Automated Reporting"
@@ -42,6 +43,7 @@ const contentData = {
         correspondence: {
             title: "Correspondence Management System",
             description: "A digital platform to manage all incoming, outgoing, and paper-based transactions, converting them into a secure electronic workflow to ensure fast information flow between departments and external entities.",
+            featuresTitle: "Key features",
             features: [
                 "1. Digital Signature  -  2. Tracking & Audit Trail  -  3. Workflow Engine",
                 "4. Smart Templates  -  5. AI Chatbot Decision Assistant  -  6. Email Integration"
@@ -50,6 +52,7 @@ const contentData = {
         asset: {
             title: "Asset Management System",
             description: "A comprehensive system for tracking and managing fixed and movable assets, from procurement and usage to depreciation or disposal.",
+            featuresTitle: "Key features",
             features: [
                 "1. Smart Tagging (QR/RFID)  -  2. Location Tracking  -  3. Maintenance History Log",
                 "4. Personnel Custody  -  5. AI Predictive Maintenance  -  6. Automated Depreciation"
@@ -58,6 +61,7 @@ const contentData = {
         operations: {
             title: "Operations & Maintenance (O&M) System",
             description: "A technical solution aimed at automating preventive and corrective maintenance, ensuring the sustainability of assets and equipment with high efficiency and minimal cost.",
+            featuresTitle: "Key features",
             features: [
                 "1. Work Order Management  -  2. Preventive Maintenance  -  3. Field Mobile App",
                 "4. SLA Management  -  5. AI Fault Diagnosis  -  6. Spare Parts Inventory"
@@ -66,6 +70,7 @@ const contentData = {
         archive: {
             title: "Document Archiving & DMS",
             description: "A central digital repository aimed at converting paper archives into an organized electronic database with advanced search tools and strict access permissions.",
+            featuresTitle: "Key features",
             features: [
                 "1. Hierarchical Filing  -  2. Smart Search (OCR)  -  3. Version Control",
                 "4. Granular Access Permissions  -  5. AI Semantic Search  -  6. System Integration"
@@ -74,60 +79,48 @@ const contentData = {
     },
     ar: {
         pmo: {
-            title: '"قرار" لإدارة المشاريع (Qarar Project Management)',
+            title: 'نظام إدارة المشاريع "قرار"',
             description: "نظام مركزي متطور مصمم لتمكين القيادات ومديري المشاريع من التخطيط، المتابعة، واتخاذ القرارات المستندة إلى البيانات. يهدف النظام إلى توحيد منهجيات العمل وضمان إنجاز المشاريع ضمن الجدول الزمني والميزانية المحددة.",
+            featuresTitle: "المميزات الرئيسية",
             features: [
-                "لوحات تحكم تفاعلية (Interactive Dashboards): عرض مؤشرات الأداء (KPIs) ونسب الإنجاز لحظياً.",
-                "إدارة الموارد (Resource Management): توزيع المهام على الفرق بناءً على التوفر والكفاءة.",
-                "إدارة المخاطر (Risk & Issue Tracking): نظام إنذار مبكر لتحديد العوائق المحتملة ووضع خطط التخفيف.",
-                "التخطيط الزمني (Gantt Charts): رسم بياني متطور لتتبع المسار الحرج وتداخل المهام.",
-                "Ai التلخيص الذكي (Smart Summarization) - التصنيف والتحويل الآلي (Auto-Routing)",
-                "التقارير المؤتمتة: توليد تقارير دورية شاملة بضغطة زر لدعم صناع القرار."
+                "1- لوحات تحكم تفاعلية (Interactive Dashboards)  -  2- إدارة الموارد (Resource Management)  -  3- إدارة المخاطر (Risk & Issue Tracking)",
+                "4- التخطيط الزمني (Gantt Charts)  -  5- التلخيص الذكي (AI Smart Summarization)  -  6- التقارير المؤتمتة"
             ]
         },
         correspondence: {
-            title: "نظام إدارة المراسلات الإلكترونية (Correspondence Management)",
+            title: "نظام إدارة المراسلات الإلكترونية",
             description: "منصة رقمية لإدارة جميع الوارد والصادر والتعاملات الورقية وتحويلها إلى دورة عمل إلكترونية مؤمنة، مما يضمن سرعة تدفق المعلومات بين الأقسام المختلفة والجهات الخارجية.",
+            featuresTitle: "المميزات الرئيسية",
             features: [
-                "التوقيع الرقمي (Digital Signature): اعتماد الخطابات والمذكرات رسمياً وبشكل آمن تماماً.",
-                "تتبع المسار (Tracking & Audit Trail): معرفة مكان الخطاب حالياً ومن قام بالإطلاع عليه أو تعديله.",
-                "محرك سير عمل مرن (Workflow Engine): تخصيص مسارات الاعتماد بناءً على نوع المراسلة أو الإدارة.",
-                "قوالب جاهزة (Smart Templates): توحيد الهوية البصرية للخطابات الرسمية وسهولة إنشائها.",
-                "مساعد قرار (AI Chatbot)",
-                "الربط مع البريد الإلكتروني: إمكانية تحويل رسائل الإيميل إلى معاملات رسمية داخل النظام."
+                "1- التوقيع الرقمي (Digital Signature)  -  2- تتبع المسار (Tracking & Audit Trail)  -  3- محرك سير عمل مرن (Workflow Engine)",
+                "4- قوالب جاهزة (Smart Templates)  -  5- مساعد قرار (AI Chatbot)  -  6- الربط مع البريد الإلكتروني"
             ]
         },
         asset: {
-            title: "نظام إدارة الأصول (Asset Management)",
+            title: "نظام إدارة الأصول",
             description: "نظام شامل لتتبع وإدارة الأصول الثابتة والمنقولة للمنظمة، بدءاً من المشتريات مروراً بالاستخدام والمواقع، وصولاً إلى الإهلاك أو التكهين.",
+            featuresTitle: "المميزات الرئيسية",
             features: [
-                "الترميز الذكي (QR Code/RFID): جرد الأصول بسرعة ودقة باستخدام ماسح الأكواد.",
-                "تتبع الموقع (Location Tracking): تحديد مكان كل أصل (مكتب، مستودع، فرع) والمسؤول عنه.",
-                "سجل الصيانة التاريخي: ربط الأصول بنظام الصيانة لمعرفة تكلفة إصلاح كل أصل.",
-                "إدارة العهد الشخصية: تسجيل الأصول المرتبطة بكل موظف وتسهيل إجراءات الإخلاء.",
-                "إدارة الموردين والضمانات: تنبيهات قبل انتهاء فترات الضمان للأجهزة والمعدات."
+                "1- الترميز الذكي (QR Code/RFID)  -  2- تتبع الموقع (Location Tracking)  -  3- سجل الصيانة التاريخي",
+                "4- إدارة العهد الشخصية  -  5- إدارة الموردين والضمانات"
             ]
         },
         operations: {
-            title: "نظام التشغيل والصيانة (O&M System)",
+            title: "نظام التشغيل والصيانة",
             description: "حل تقني يهدف إلى أتمتة عمليات الصيانة الوقائية والتصحيحية، وضمان استدامة الاصول والمعدات بأعلى كفاءة تشغيلية وأقل تكلفة ممكنة.",
+            featuresTitle: "المميزات الرئيسية",
             features: [
-                "إدارة أوامر العمل (Work Order Management): إنشاء وتكليف ومتابعة طلبات الإصلاح لحظياً.",
-                "جدولة الصيانة الوقائية: نظام جدولة تلقائي للمهمات الدورية (تغيير فلاتر، فحص سنوي، إلخ).",
-                "تطبيق الميدان للفنيين: تطبيق موبايل يتيح للفنيين تحديث حالة العمل ورفع الصور من الموقع.",
-                "إدارة اتفاقيات مستوى الخدمة (SLA): قياس سرعة استجابة فرق الصيانة وجودة التنفيذ.",
-                "تحليل الأعطال المتكررة: تقارير تحليلية لتحديد المعدات التي تستهلك مصاريف صيانة عالية لاستبدالها."
+                "1- إدارة أوامر العمل (Work Order Management)  -  2- جدولة الصيانة الوقائية  -  3- تطبيق الميدان للفنيين",
+                "4- إدارة اتفاقيات مستوى الخدمة (SLA)  -  5- تحليل الأعطال المتكررة"
             ]
         },
         archive: {
-            title: "نظام أرشفة المستندات (Document Archiving & DMS)",
+            title: "نظام أرشفة المستندات",
             description: "مستودع رقمي مركزي يهدف إلى تحويل الأرشيف الورقي إلى قاعدة بيانات إلكترونية منظمة، مع توفير أدوات بحث متقدمة وصلاحيات وصول صارمة لحماية خصوصية المعلومات.",
+            featuresTitle: "المميزات الرئيسية",
             features: [
-                "التصنيف الشجري (Hierarchical Filing): تنظيم الملفات في مجلدات ومجلدات فرعية مخصصة لكل إدارة.",
-                "البحث الذكي (OCR & Full-Text Search): إمكانية البحث داخل محتوى المستندات الممسوحة ضوئياً.",
-                "إدارة النسخ (Version Control): الاحتفاظ بكافة نسخ التعديل على المستند مع إمكانية الرجوع للنسخ السابقة.",
-                "صلاحيات الوصول الدقيقة: تحديد من يمكنه (عرض، تحميل، حذف، أو طباعة) كل مستند.",
-                "التكامل مع الأنظمة الأخرى: إمكانية استدعاء المستندات من داخل نظام المشاريع أو المراسلات."
+                "1- التصنيف الشجري (Hierarchical Filing)  -  2- البحث الذكي (OCR & Full-Text Search)  -  3- إدارة النسخ (Version Control)",
+                "4- صلاحيات الوصول الدقيقة  -  5- التكامل مع الأنظمة الأخرى"
             ]
         }
     }
@@ -425,6 +418,12 @@ function updateSectionContent(sectionName) {
             console.log('Description updated');
         } else {
             console.log('Description element not found!');
+        }
+        
+        // Update features title
+        const featuresTitle = section.querySelector('.features-title');
+        if (featuresTitle) {
+            featuresTitle.textContent = content.featuresTitle;
         }
         
         // Update features

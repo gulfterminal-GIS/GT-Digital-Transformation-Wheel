@@ -2,6 +2,24 @@
 let currentSection = 'pmo';
 let currentLanguage = 'en'; // 'en' or 'ar'
 
+// Wheel segment labels
+const wheelLabels = {
+    en: {
+        operations: "Operations &<br>Maintenance",
+        asset: "Asset<br>Management",
+        correspondence: "Correspondence<br>Management",
+        pmo: "Qarar<br>PMO",
+        archive: "Document<br>Archiving & DMS"
+    },
+    ar: {
+        operations: "نظام التشغيل<br>والصيانة",
+        asset: "نظام إدارة<br>الأصول",
+        correspondence: "نظام إدارة<br>المراسلات",
+        pmo: "نظام<br>قرار",
+        archive: "نظام أرشفة<br>المستندات"
+    }
+};
+
 // About Us content data
 const aboutUsContent = {
     en: {
@@ -38,7 +56,9 @@ const contentData = {
             features: [
                 "1. Interactive Dashboards  -  2. Resource Management  -  3. Risk & Issue Tracking",
                 "4. Gantt Charts  -  5. AI Smart Summarization  -  6. Automated Reporting"
-            ]
+            ],
+            watchDemo: "Watch Demo",
+            downloadPdf: "Download PDF"
         },
         correspondence: {
             title: "Correspondence Management System",
@@ -47,7 +67,9 @@ const contentData = {
             features: [
                 "1. Digital Signature  -  2. Tracking & Audit Trail  -  3. Workflow Engine",
                 "4. Smart Templates  -  5. AI Chatbot Decision Assistant  -  6. Email Integration"
-            ]
+            ],
+            watchDemo: "Watch Demo",
+            downloadPdf: "Download PDF"
         },
         asset: {
             title: "Asset Management System",
@@ -56,7 +78,9 @@ const contentData = {
             features: [
                 "1. Smart Tagging (QR/RFID)  -  2. Location Tracking  -  3. Maintenance History Log",
                 "4. Personnel Custody  -  5. AI Predictive Maintenance  -  6. Automated Depreciation"
-            ]
+            ],
+            watchDemo: "Watch Demo",
+            downloadPdf: "Download PDF"
         },
         operations: {
             title: "Operations & Maintenance (O&M) System",
@@ -65,7 +89,9 @@ const contentData = {
             features: [
                 "1. Work Order Management  -  2. Preventive Maintenance  -  3. Field Mobile App",
                 "4. SLA Management  -  5. AI Fault Diagnosis  -  6. Spare Parts Inventory"
-            ]
+            ],
+            watchDemo: "Watch Demo",
+            downloadPdf: "Download PDF"
         },
         archive: {
             title: "Document Archiving & DMS",
@@ -74,7 +100,9 @@ const contentData = {
             features: [
                 "1. Hierarchical Filing  -  2. Smart Search (OCR)  -  3. Version Control",
                 "4. Granular Access Permissions  -  5. AI Semantic Search  -  6. System Integration"
-            ]
+            ],
+            watchDemo: "Watch Demo",
+            downloadPdf: "Download PDF"
         }
     },
     ar: {
@@ -83,45 +111,55 @@ const contentData = {
             description: "نظام مركزي متطور مصمم لتمكين القيادات ومديري المشاريع من التخطيط، المتابعة، واتخاذ القرارات المستندة إلى البيانات. يهدف النظام إلى توحيد منهجيات العمل وضمان إنجاز المشاريع ضمن الجدول الزمني والميزانية المحددة.",
             featuresTitle: "المميزات الرئيسية",
             features: [
-                "1- لوحات تحكم تفاعلية (Interactive Dashboards)  -  2- إدارة الموارد (Resource Management)  -  3- إدارة المخاطر (Risk & Issue Tracking)",
-                "4- التخطيط الزمني (Gantt Charts)  -  5- التلخيص الذكي (AI Smart Summarization)  -  6- التقارير المؤتمتة"
-            ]
+                "1. لوحات تحكم تفاعلية  -  2. إدارة الموارد  -  3. إدارة المخاطر",
+                "4. التخطيط الزمني  -  5. التلخيص الذكي  -  6. التقارير المؤتمتة"
+            ],
+            watchDemo: "شاهد العرض",
+            downloadPdf: "تحميل PDF"
         },
         correspondence: {
             title: "نظام إدارة المراسلات الإلكترونية",
             description: "منصة رقمية لإدارة جميع الوارد والصادر والتعاملات الورقية وتحويلها إلى دورة عمل إلكترونية مؤمنة، مما يضمن سرعة تدفق المعلومات بين الأقسام المختلفة والجهات الخارجية.",
             featuresTitle: "المميزات الرئيسية",
             features: [
-                "1- التوقيع الرقمي (Digital Signature)  -  2- تتبع المسار (Tracking & Audit Trail)  -  3- محرك سير عمل مرن (Workflow Engine)",
-                "4- قوالب جاهزة (Smart Templates)  -  5- مساعد قرار (AI Chatbot)  -  6- الربط مع البريد الإلكتروني"
-            ]
+                "1. التوقيع الرقمي  -  2. تتبع المسار  -  3. محرك سير عمل مرن",
+                "4. قوالب جاهزة  -  5. مساعد قرار  -  6. الربط مع البريد الإلكتروني"
+            ],
+            watchDemo: "شاهد العرض",
+            downloadPdf: "تحميل PDF"
         },
         asset: {
             title: "نظام إدارة الأصول",
             description: "نظام شامل لتتبع وإدارة الأصول الثابتة والمنقولة للمنظمة، بدءاً من المشتريات مروراً بالاستخدام والمواقع، وصولاً إلى الإهلاك أو التكهين.",
             featuresTitle: "المميزات الرئيسية",
             features: [
-                "1- الترميز الذكي (QR Code/RFID)  -  2- تتبع الموقع (Location Tracking)  -  3- سجل الصيانة التاريخي",
-                "4- إدارة العهد الشخصية  -  5- إدارة الموردين والضمانات"
-            ]
+                "1. الترميز الذكي  -  2. تتبع الموقع  -  3. سجل الصيانة التاريخي",
+                "4. إدارة العهد الشخصية  -  5. إدارة الموردين والضمانات"
+            ],
+            watchDemo: "شاهد العرض",
+            downloadPdf: "تحميل PDF"
         },
         operations: {
             title: "نظام التشغيل والصيانة",
             description: "حل تقني يهدف إلى أتمتة عمليات الصيانة الوقائية والتصحيحية، وضمان استدامة الاصول والمعدات بأعلى كفاءة تشغيلية وأقل تكلفة ممكنة.",
             featuresTitle: "المميزات الرئيسية",
             features: [
-                "1- إدارة أوامر العمل (Work Order Management)  -  2- جدولة الصيانة الوقائية  -  3- تطبيق الميدان للفنيين",
-                "4- إدارة اتفاقيات مستوى الخدمة (SLA)  -  5- تحليل الأعطال المتكررة"
-            ]
+                "1. إدارة أوامر العمل  -  2. جدولة الصيانة الوقائية  -  3. تطبيق الميدان للفنيين",
+                "4. إدارة اتفاقيات مستوى الخدمة  -  5. تحليل الأعطال المتكررة"
+            ],
+            watchDemo: "شاهد العرض",
+            downloadPdf: "تحميل PDF"
         },
         archive: {
             title: "نظام أرشفة المستندات",
             description: "مستودع رقمي مركزي يهدف إلى تحويل الأرشيف الورقي إلى قاعدة بيانات إلكترونية منظمة، مع توفير أدوات بحث متقدمة وصلاحيات وصول صارمة لحماية خصوصية المعلومات.",
             featuresTitle: "المميزات الرئيسية",
             features: [
-                "1- التصنيف الشجري (Hierarchical Filing)  -  2- البحث الذكي (OCR & Full-Text Search)  -  3- إدارة النسخ (Version Control)",
-                "4- صلاحيات الوصول الدقيقة  -  5- التكامل مع الأنظمة الأخرى"
-            ]
+                "1. التصنيف الشجري  -  2. البحث الذكي  -  3. إدارة النسخ",
+                "4. صلاحيات الوصول الدقيقة  -  5. التكامل مع الأنظمة الأخرى"
+            ],
+            watchDemo: "شاهد العرض",
+            downloadPdf: "تحميل PDF"
         }
     }
 };
@@ -143,6 +181,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize About Us content
     updateAboutUsContent();
+    
+    // Initialize wheel labels
+    updateWheelLabels();
     
     // Hide loading screen after everything is loaded
     setTimeout(() => {
@@ -285,7 +326,7 @@ function initializeAboutUs() {
     }
 }
 
-// Update content for all sections
+// Update all sections content
 function updateAllSectionsContent() {
     // Only update the currently active section immediately
     // Other sections will be updated when they become active
@@ -293,6 +334,35 @@ function updateAllSectionsContent() {
     
     // Update About Us content
     updateAboutUsContent();
+    
+    // Update wheel labels
+    updateWheelLabels();
+}
+
+// Update wheel segment labels based on language
+function updateWheelLabels() {
+    const labels = wheelLabels[currentLanguage];
+    
+    // Update all segment texts in all wheels
+    document.querySelectorAll('.segment-1-pie .segment-text').forEach(text => {
+        text.innerHTML = labels.operations;
+    });
+    
+    document.querySelectorAll('.segment-2-pie .segment-text').forEach(text => {
+        text.innerHTML = labels.asset;
+    });
+    
+    document.querySelectorAll('.segment-3-pie .segment-text').forEach(text => {
+        text.innerHTML = labels.correspondence;
+    });
+    
+    document.querySelectorAll('.segment-4-pie .segment-text').forEach(text => {
+        text.innerHTML = labels.pmo;
+    });
+    
+    document.querySelectorAll('.segment-5-pie .segment-text').forEach(text => {
+        text.innerHTML = labels.archive;
+    });
 }
 
 // Update About Us content based on language
@@ -434,6 +504,17 @@ function updateSectionContent(sectionName) {
                 featureItems[index].textContent = feature;
             }
         });
+        
+        // Update button texts
+        const watchDemoBtn = section.querySelector('.btn-primary span');
+        if (watchDemoBtn) {
+            watchDemoBtn.textContent = content.watchDemo;
+        }
+        
+        const downloadPdfBtn = section.querySelector('.btn-secondary span');
+        if (downloadPdfBtn) {
+            downloadPdfBtn.textContent = content.downloadPdf;
+        }
         
         // Update text direction for Arabic
         const contentArea = section.querySelector('.content-area');

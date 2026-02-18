@@ -743,7 +743,7 @@ body.rtl .wheel-container {
 }
 
 body.rtl .pointer-indicator {
-  left: 3.75vw;
+  left: 0.7vw;
   right: auto;
   transform: translateY(-50%) scaleX(-1);
 }
@@ -756,7 +756,7 @@ body.rtl .pointer-indicator {
 }
 
 body.rtl .pointer-secondary {
-  left: 2.2vw;
+  left: 1.6vw;
   right: auto;
 }
 

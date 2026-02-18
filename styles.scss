@@ -879,7 +879,7 @@ body.rtl .wheel-container {
 }
 
 body.rtl .pointer-indicator {
-    left: 3.75vw; // Position at west/left side of wheel
+    left: 0.7vw; // Position at west/left side of wheel
     right: auto;
     transform: translateY(-50%) scaleX(-1); // Flip to point left
 }
@@ -892,7 +892,7 @@ body.rtl .pointer-indicator {
 }
 
 body.rtl .pointer-secondary {
-    left: 2.2vw; // Position at west/left side of wheel
+    left: 1.6vw; // Position at west/left side of wheel
     right: auto;
 }
 

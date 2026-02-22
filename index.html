@@ -1,785 +1,1056 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digital Transformation Wheel - Qarar PMO</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Khand:wght@400;500&family=Koulen&family=Inter:wght@200;400;800&family=Jua&family=Poppins:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=60">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Khand:wght@400;500&family=Koulen&family=Inter:wght@200;400;800&family=Jua&family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css?v=60" />
+  </head>
+  <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <img src="assets/Splash.gif" alt="Loading..." class="loading-bg">
-        <div class="loading-center">
-            <img src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif" alt="Center Animation" class="loading-center-gif">
-            <div class="loading-center-text">
-                <div class="loading-text-digital">Digital</div>
-                <div class="loading-text-transformation">Transformation</div>
-                <div class="loading-text-wheel">WHEEL</div>
-            </div>
+      <img src="assets/Splash.gif" alt="Loading..." class="loading-bg" />
+      <div class="loading-center">
+        <img
+          src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif"
+          alt="Center Animation"
+          class="loading-center-gif"
+        />
+        <div class="loading-center-text">
+          <div class="loading-text-digital">Digital</div>
+          <div class="loading-text-transformation">Transformation</div>
+          <div class="loading-text-wheel">WHEEL</div>
         </div>
+      </div>
     </div>
 
     <!-- About Us Overlay -->
     <div class="about-us-overlay" id="aboutUsOverlay">
-        <video class="about-video-bg" autoplay loop muted playsinline>
-            <source src="assets/video.mp4" type="video/mp4">
-        </video>
-        <div class="about-overlay-bg"></div>
-        
-        <button class="about-close-btn" id="aboutCloseBtn">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <div class="about-content">
-            <h1 class="about-title">Who we are ?</h1>
-            <p class="about-description">
-                We are an AI-driven digital transformation company building intelligent software systems that automate processes, unlock insights, and accelerate smarter decision-making. By embedding AI at the core of every solution, we help organizations transform data into action and innovation into measurable impact.
-            </p>
-            
-            <div class="about-stats">
-                <div class="stat-item">
-                    <div class="stat-icon-wrapper">
-                        <div class="stat-icon-bg">
-                            <img src="assets/Active Projects.svg" alt="Active Projects" class="stat-icon">
-                        </div>
-                        <div class="stat-number">20 +</div>
-                    </div>
-                    <div class="stat-label">Active Projects</div>
+      <video class="about-video-bg" autoplay loop muted playsinline>
+        <source src="assets/video.mp4" type="video/mp4" />
+      </video>
+      <div class="about-overlay-bg"></div>
+
+      <button class="about-close-btn" id="aboutCloseBtn">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="about-content">
+        <div class="about-content-wrap">
+          <h1 class="about-title">Who we are ?</h1>
+          <p class="about-description">
+            We are an AI-driven digital transformation company building
+            intelligent software systems that automate processes, unlock
+            insights, and accelerate smarter decision-making. By embedding AI at
+            the core of every solution, we help organizations transform data
+            into action and innovation into measurable impact.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-icon-wrapper">
+                <div class="stat-icon-bg">
+                  <img
+                    src="assets/Active Projects.svg"
+                    alt="Active Projects"
+                    class="stat-icon"
+                  />
                 </div>
-                
-                <div class="stat-item">
-                    <div class="stat-icon-wrapper">
-                        <div class="stat-icon-bg">
-                            <img src="assets/Valued Clients.svg" alt="Valued Clients" class="stat-icon">
-                        </div>
-                        <div class="stat-number">50 +</div>
-                    </div>
-                    <div class="stat-label">Valued Clients</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-icon-wrapper">
-                        <div class="stat-icon-bg">
-                            <img src="assets/Government Entities.svg" alt="Government Entities" class="stat-icon">
-                        </div>
-                        <div class="stat-number">10 +</div>
-                    </div>
-                    <div class="stat-label">Government Entities</div>
-                </div>
-                
-                <div class="stat-item">
-                    <div class="stat-icon-wrapper">
-                        <div class="stat-icon-bg">
-                            <img src="assets/Strategic Alliances.svg" alt="Strategic Alliances" class="stat-icon">
-                        </div>
-                        <div class="stat-number">15 +</div>
-                    </div>
-                    <div class="stat-label">Strategic Alliances</div>
-                </div>
+                <div class="stat-number">20 +</div>
+              </div>
+              <div class="stat-label">Active Projects</div>
             </div>
+
+            <div class="stat-item">
+              <div class="stat-icon-wrapper">
+                <div class="stat-icon-bg">
+                  <img
+                    src="assets/Valued Clients.svg"
+                    alt="Valued Clients"
+                    class="stat-icon"
+                  />
+                </div>
+                <div class="stat-number">50 +</div>
+              </div>
+              <div class="stat-label">Valued Clients</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon-wrapper">
+                <div class="stat-icon-bg">
+                  <img
+                    src="assets/Government Entities.svg"
+                    alt="Government Entities"
+                    class="stat-icon"
+                  />
+                </div>
+                <div class="stat-number">10 +</div>
+              </div>
+              <div class="stat-label">Government Entities</div>
+            </div>
+
+            <div class="stat-item">
+              <div class="stat-icon-wrapper">
+                <div class="stat-icon-bg">
+                  <img
+                    src="assets/Strategic Alliances.svg"
+                    alt="Strategic Alliances"
+                    class="stat-icon"
+                  />
+                </div>
+                <div class="stat-number">15 +</div>
+              </div>
+              <div class="stat-label">Strategic Alliances</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    
+
     <!-- Top Navigation -->
     <div class="top-nav">
-        <div class="about-us-btn">
-            <span>About us</span>
-        </div>
-        <div class="lang-switcher">
-            <span>ع</span>
-        </div>
+      <div class="about-us-btn">
+        <span>About us</span>
+      </div>
+      <div class="lang-switcher">
+        <span>ع</span>
+      </div>
     </div>
-    
+
     <!-- Section 1: QARAR PMO -->
     <section class="content-section active" id="section-pmo" data-section="pmo">
-        <div class="background-overlay"></div>
-        <img src="assets/Qarar Project Management (Qarar PMO).png" alt="Background" class="background-image">
-        
-        <!-- Wheel Container -->
-        <div class="wheel-container">
-            <div class="wheel" id="wheel">
-                <!-- Pie Chart Segments using divs -->
-                
-                <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
-                <div class="pie-segment segment-1-pie" data-target="operations">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Operations &<br>Maintenance</span>
-                </div>
-                
-                <!-- Segment 2: Asset Management (72deg to 144deg) -->
-                <div class="pie-segment segment-2-pie" data-target="asset">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Asset<br>Management</span>
-                </div>
-                
-                <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
-                <div class="pie-segment segment-3-pie" data-target="correspondence">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Correspondence<br>Management</span>
-                </div>
-                
-                <!-- Segment 4: Qarar PMO (216deg to 288deg) - ACTIVE -->
-                <div class="pie-segment segment-4-pie active" data-target="pmo">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Qarar<br>PMO</span>
-                </div>
-                
-                <!-- Segment 5: Document Archiving (288deg to 360deg) -->
-                <div class="pie-segment segment-5-pie" data-target="archive">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Document<br>Archiving & DMS</span>
-                </div>
+      <div class="background-overlay"></div>
+      <img
+        src="assets/Qarar Project Management (Qarar PMO).png"
+        alt="Background"
+        class="background-image"
+      />
+
+      <!-- Wheel Container -->
+      <div class="wheel-container">
+        <div class="wheel" id="wheel">
+          <!-- Pie Chart Segments using divs -->
+
+          <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
+          <div class="pie-segment segment-1-pie" data-target="operations">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Center Circle - Outside wheel to avoid mask -->
-            <div class="wheel-center">
-                <img src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif" alt="Center Animation" class="center-gif">
+            <span class="segment-text">Operations &<br />Maintenance</span>
+          </div>
+
+          <!-- Segment 2: Asset Management (72deg to 144deg) -->
+          <div class="pie-segment segment-2-pie" data-target="asset">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="wheel-center-text">
-                <div class="text-digital">Digital</div>
-                <div class="text-transformation">Transformation</div>
-                <div class="text-wheel">WHEEL</div>
+            <span class="segment-text">Asset<br />Management</span>
+          </div>
+
+          <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
+          <div class="pie-segment segment-3-pie" data-target="correspondence">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Pointer Indicators - Outside wheel so they don't rotate -->
-            <div class="pointer-indicator pointer-main">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Correspondence<br />Management</span>
+          </div>
+
+          <!-- Segment 4: Qarar PMO (216deg to 288deg) - ACTIVE -->
+          <div class="pie-segment segment-4-pie active" data-target="pmo">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="pointer-indicator pointer-secondary">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Qarar<br />PMO</span>
+          </div>
+
+          <!-- Segment 5: Document Archiving (288deg to 360deg) -->
+          <div class="pie-segment segment-5-pie" data-target="archive">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
+            <span class="segment-text">Document<br />Archiving & DMS</span>
+          </div>
         </div>
-        
-        <!-- Content Area -->
-        <div class="content-area">
-            <div class="content-wrapper">
-                <h1 class="content-title">Qarar Project Management (Qarar PMO)</h1>
-                <p class="content-description">
-                    An advanced central system designed to enable leaders and project managers to plan, monitor, and make data-driven decisions. It aims to unify methodologies and ensure projects are completed within the set timeframe and budget.
-                </p>
-                
-                <div class="features-section">
-                    <h2 class="features-title">Key features</h2>
-                    <div class="features-list">
-                        <p class="feature-item">1. Interactive Dashboards  -  2. Resource Management  -  3. Risk & Issue Tracking</p>
-                        <p class="feature-item">4. Gantt Charts  -  5. AI Smart Summarization  -  6. Automated Reporting</p>
-                    </div>
-                </div>
-                
-                <div class="buttons-container">
-                    <button class="btn btn-primary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M10 8L30 20L10 32V8Z" fill="#25363C"/>
-                        </svg>
-                        <span>Watch Demo</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M20 5V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L13 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L27 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Download PDf</span>
-                    </button>
-                </div>
+
+        <!-- Center Circle - Outside wheel to avoid mask -->
+        <div class="wheel-center">
+          <img
+            src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif"
+            alt="Center Animation"
+            class="center-gif"
+          />
+        </div>
+        <div class="wheel-center-text">
+          <div class="text-digital">Digital</div>
+          <div class="text-transformation">Transformation</div>
+          <div class="text-wheel">WHEEL</div>
+        </div>
+
+        <!-- Pointer Indicators - Outside wheel so they don't rotate -->
+        <div class="pointer-indicator pointer-main">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="pointer-indicator pointer-secondary">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="content-wrapper">
+          <h1 class="content-title">Qarar Project Management (Qarar PMO)</h1>
+          <p class="content-description">
+            An advanced central system designed to enable leaders and project
+            managers to plan, monitor, and make data-driven decisions. It aims
+            to unify methodologies and ensure projects are completed within the
+            set timeframe and budget.
+          </p>
+
+          <div class="features-section">
+            <h2 class="features-title">Key features</h2>
+            <div class="features-list">
+              <p class="feature-item">
+                1. Interactive Dashboards - 2. Resource Management - 3. Risk &
+                Issue Tracking
+              </p>
+              <p class="feature-item">
+                4. Gantt Charts - 5. AI Smart Summarization - 6. Automated
+                Reporting
+              </p>
             </div>
+          </div>
+
+          <div class="buttons-container">
+            <button class="btn btn-primary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M10 8L30 20L10 32V8Z" fill="#25363C" />
+              </svg>
+              <span>Watch Demo</span>
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5V23"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L13 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L27 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Download PDf</span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Navigation Dots -->
-        <div class="nav-dots">
-            <div class="dot active" data-section="pmo"></div>
-            <div class="dot" data-section="correspondence"></div>
-            <div class="dot" data-section="asset"></div>
-            <div class="dot" data-section="operations"></div>
-            <div class="dot" data-section="archive"></div>
-            <div class="dot-spacer"></div>
-            <div class="chatbot-icon">
-                <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot">
-            </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="nav-dots">
+        <div class="dot active" data-section="pmo"></div>
+        <div class="dot" data-section="correspondence"></div>
+        <div class="dot" data-section="asset"></div>
+        <div class="dot" data-section="operations"></div>
+        <div class="dot" data-section="archive"></div>
+        <div class="dot-spacer"></div>
+        <div class="chatbot-icon">
+          <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot" />
         </div>
-        
-        <!-- Chatbot -->
-        <div class="chatbot-bubble">
-            <img src="assets/Hi.png" alt="Hi" class="hi-bubble">
-            <img src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif" alt="Chatbot" class="chatbot-image">
-            <div class="chatbot-message">HI!</div>
-        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="chatbot-bubble">
+        <img src="assets/Hi.png" alt="Hi" class="hi-bubble" />
+        <img
+          src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif"
+          alt="Chatbot"
+          class="chatbot-image"
+        />
+        <div class="chatbot-message">HI!</div>
+      </div>
     </section>
 
     <!-- Section 2: CORRESPONDENCE MANAGEMENT -->
-    <section class="content-section" id="section-correspondence" data-section="correspondence">
-        <div class="background-overlay"></div>
-        <img src="assets/Correspondence Management System.jpg" alt="Background" class="background-image">
-        
-        <!-- Wheel Container -->
-        <div class="wheel-container">
-            <div class="wheel" id="wheel2">
-                <!-- Pie Chart Segments using divs -->
-                
-                <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
-                <div class="pie-segment segment-1-pie" data-target="operations">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Operations &<br>Maintenance</span>
-                </div>
-                
-                <!-- Segment 2: Asset Management (72deg to 144deg) -->
-                <div class="pie-segment segment-2-pie" data-target="asset">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Asset<br>Management</span>
-                </div>
-                
-                <!-- Segment 3: Correspondence Management (144deg to 216deg) - ACTIVE -->
-                <div class="pie-segment segment-3-pie active" data-target="correspondence">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Correspondence<br>Management</span>
-                </div>
-                
-                <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
-                <div class="pie-segment segment-4-pie" data-target="pmo">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Qarar<br>PMO</span>
-                </div>
-                
-                <!-- Segment 5: Document Archiving (288deg to 360deg) -->
-                <div class="pie-segment segment-5-pie" data-target="archive">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Document<br>Archiving & DMS</span>
-                </div>
+    <section
+      class="content-section"
+      id="section-correspondence"
+      data-section="correspondence"
+    >
+      <div class="background-overlay"></div>
+      <img
+        src="assets/Correspondence Management System.jpg"
+        alt="Background"
+        class="background-image"
+      />
+
+      <!-- Wheel Container -->
+      <div class="wheel-container">
+        <div class="wheel" id="wheel2">
+          <!-- Pie Chart Segments using divs -->
+
+          <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
+          <div class="pie-segment segment-1-pie" data-target="operations">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Center Circle - Outside wheel to avoid mask -->
-            <div class="wheel-center">
-                <img src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif" alt="Center Animation" class="center-gif">
+            <span class="segment-text">Operations &<br />Maintenance</span>
+          </div>
+
+          <!-- Segment 2: Asset Management (72deg to 144deg) -->
+          <div class="pie-segment segment-2-pie" data-target="asset">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="wheel-center-text">
-                <div class="text-digital">Digital</div>
-                <div class="text-transformation">Transformation</div>
-                <div class="text-wheel">WHEEL</div>
+            <span class="segment-text">Asset<br />Management</span>
+          </div>
+
+          <!-- Segment 3: Correspondence Management (144deg to 216deg) - ACTIVE -->
+          <div
+            class="pie-segment segment-3-pie active"
+            data-target="correspondence"
+          >
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Pointer Indicators - Outside wheel so they don't rotate -->
-            <div class="pointer-indicator pointer-main">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Correspondence<br />Management</span>
+          </div>
+
+          <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
+          <div class="pie-segment segment-4-pie" data-target="pmo">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="pointer-indicator pointer-secondary">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Qarar<br />PMO</span>
+          </div>
+
+          <!-- Segment 5: Document Archiving (288deg to 360deg) -->
+          <div class="pie-segment segment-5-pie" data-target="archive">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
+            <span class="segment-text">Document<br />Archiving & DMS</span>
+          </div>
         </div>
-        
-        <!-- Content Area -->
-        <div class="content-area">
-            <div class="content-wrapper">
-                <h1 class="content-title">Correspondence Management System</h1>
-                <p class="content-description">
-                    A digital platform to manage all incoming, outgoing, and paper-based transactions, converting them into a secure electronic workflow to ensure fast information flow between departments and external entities.
-                </p>
-                
-                <div class="features-section">
-                    <h2 class="features-title">Key features</h2>
-                    <div class="features-list">
-                        <p class="feature-item">1. Digital Signature  -  2. Tracking & Audit Trail  -  3. Workflow Engine</p>
-                        <p class="feature-item">4. Smart Templates  -  5. AI Chatbot Decision Assistant  -  6. Email Integration</p>
-                    </div>
-                </div>
-                
-                <div class="buttons-container">
-                    <button class="btn btn-primary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M10 8L30 20L10 32V8Z" fill="#25363C"/>
-                        </svg>
-                        <span>Watch Demo</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M20 5V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L13 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L27 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Download PDf</span>
-                    </button>
-                </div>
+
+        <!-- Center Circle - Outside wheel to avoid mask -->
+        <div class="wheel-center">
+          <img
+            src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif"
+            alt="Center Animation"
+            class="center-gif"
+          />
+        </div>
+        <div class="wheel-center-text">
+          <div class="text-digital">Digital</div>
+          <div class="text-transformation">Transformation</div>
+          <div class="text-wheel">WHEEL</div>
+        </div>
+
+        <!-- Pointer Indicators - Outside wheel so they don't rotate -->
+        <div class="pointer-indicator pointer-main">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="pointer-indicator pointer-secondary">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="content-wrapper">
+          <h1 class="content-title">Correspondence Management System</h1>
+          <p class="content-description">
+            A digital platform to manage all incoming, outgoing, and paper-based
+            transactions, converting them into a secure electronic workflow to
+            ensure fast information flow between departments and external
+            entities.
+          </p>
+
+          <div class="features-section">
+            <h2 class="features-title">Key features</h2>
+            <div class="features-list">
+              <p class="feature-item">
+                1. Digital Signature - 2. Tracking & Audit Trail - 3. Workflow
+                Engine
+              </p>
+              <p class="feature-item">
+                4. Smart Templates - 5. AI Chatbot Decision Assistant - 6. Email
+                Integration
+              </p>
             </div>
+          </div>
+
+          <div class="buttons-container">
+            <button class="btn btn-primary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M10 8L30 20L10 32V8Z" fill="#25363C" />
+              </svg>
+              <span>Watch Demo</span>
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5V23"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L13 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L27 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Download PDf</span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Navigation Dots -->
-        <div class="nav-dots">
-            <div class="dot" data-section="pmo"></div>
-            <div class="dot active" data-section="correspondence"></div>
-            <div class="dot" data-section="asset"></div>
-            <div class="dot" data-section="operations"></div>
-            <div class="dot" data-section="archive"></div>
-            <div class="dot-spacer"></div>
-            <div class="chatbot-icon">
-                <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot">
-            </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="nav-dots">
+        <div class="dot" data-section="pmo"></div>
+        <div class="dot active" data-section="correspondence"></div>
+        <div class="dot" data-section="asset"></div>
+        <div class="dot" data-section="operations"></div>
+        <div class="dot" data-section="archive"></div>
+        <div class="dot-spacer"></div>
+        <div class="chatbot-icon">
+          <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot" />
         </div>
-        
-        <!-- Chatbot -->
-        <div class="chatbot-bubble">
-            <img src="assets/Hi.png" alt="Hi" class="hi-bubble">
-            <img src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif" alt="Chatbot" class="chatbot-image">
-            <div class="chatbot-message">HI!</div>
-        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="chatbot-bubble">
+        <img src="assets/Hi.png" alt="Hi" class="hi-bubble" />
+        <img
+          src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif"
+          alt="Chatbot"
+          class="chatbot-image"
+        />
+        <div class="chatbot-message">HI!</div>
+      </div>
     </section>
 
     <!-- Section 3: ASSET MANAGEMENT -->
     <section class="content-section" id="section-asset" data-section="asset">
-        <div class="background-overlay"></div>
-        <img src="assets/Asset Management System.jpg" alt="Background" class="background-image">
-        
-        <!-- Wheel Container -->
-        <div class="wheel-container">
-            <div class="wheel" id="wheel3">
-                <!-- Pie Chart Segments using divs -->
-                
-                <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
-                <div class="pie-segment segment-1-pie">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Operations &<br>Maintenance</span>
-                </div>
-                
-                <!-- Segment 2: Asset Management (72deg to 144deg) - ACTIVE -->
-                <div class="pie-segment segment-2-pie active" data-target="asset">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Asset<br>Management</span>
-                </div>
-                
-                <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
-                <div class="pie-segment segment-3-pie" data-target="correspondence">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Correspondence<br>Management</span>
-                </div>
-                
-                <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
-                <div class="pie-segment segment-4-pie" data-target="pmo">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Qarar<br>PMO</span>
-                </div>
-                
-                <!-- Segment 5: Document Archiving (288deg to 360deg) -->
-                <div class="pie-segment segment-5-pie" data-target="archive">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Document<br>Archiving & DMS</span>
-                </div>
+      <div class="background-overlay"></div>
+      <img
+        src="assets/Asset Management System.jpg"
+        alt="Background"
+        class="background-image"
+      />
+
+      <!-- Wheel Container -->
+      <div class="wheel-container">
+        <div class="wheel" id="wheel3">
+          <!-- Pie Chart Segments using divs -->
+
+          <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
+          <div class="pie-segment segment-1-pie">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Center Circle - Outside wheel to avoid mask -->
-            <div class="wheel-center">
-                <img src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif" alt="Center Animation" class="center-gif">
+            <span class="segment-text">Operations &<br />Maintenance</span>
+          </div>
+
+          <!-- Segment 2: Asset Management (72deg to 144deg) - ACTIVE -->
+          <div class="pie-segment segment-2-pie active" data-target="asset">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="wheel-center-text">
-                <div class="text-digital">Digital</div>
-                <div class="text-transformation">Transformation</div>
-                <div class="text-wheel">WHEEL</div>
+            <span class="segment-text">Asset<br />Management</span>
+          </div>
+
+          <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
+          <div class="pie-segment segment-3-pie" data-target="correspondence">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Pointer Indicators - Outside wheel so they don't rotate -->
-            <div class="pointer-indicator pointer-main">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Correspondence<br />Management</span>
+          </div>
+
+          <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
+          <div class="pie-segment segment-4-pie" data-target="pmo">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="pointer-indicator pointer-secondary">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Qarar<br />PMO</span>
+          </div>
+
+          <!-- Segment 5: Document Archiving (288deg to 360deg) -->
+          <div class="pie-segment segment-5-pie" data-target="archive">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
+            <span class="segment-text">Document<br />Archiving & DMS</span>
+          </div>
         </div>
-        
-        <!-- Content Area -->
-        <div class="content-area">
-            <div class="content-wrapper">
-                <h1 class="content-title">Asset Management System</h1>
-                <p class="content-description">
-                    A comprehensive system for tracking and managing fixed and movable assets, from procurement and usage to depreciation or disposal.
-                </p>
-                
-                <div class="features-section">
-                    <h2 class="features-title">Key features</h2>
-                    <div class="features-list">
-                        <p class="feature-item">1. Smart Tagging (QR/RFID)  -  2. Location Tracking  -  3. Maintenance History Log</p>
-                        <p class="feature-item">4. Personnel Custody  -  5. AI Predictive Maintenance  -  6. Automated Depreciation</p>
-                    </div>
-                </div>
-                
-                <div class="buttons-container">
-                    <button class="btn btn-primary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M10 8L30 20L10 32V8Z" fill="#25363C"/>
-                        </svg>
-                        <span>Watch Demo</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M20 5V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L13 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L27 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Download PDf</span>
-                    </button>
-                </div>
+
+        <!-- Center Circle - Outside wheel to avoid mask -->
+        <div class="wheel-center">
+          <img
+            src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif"
+            alt="Center Animation"
+            class="center-gif"
+          />
+        </div>
+        <div class="wheel-center-text">
+          <div class="text-digital">Digital</div>
+          <div class="text-transformation">Transformation</div>
+          <div class="text-wheel">WHEEL</div>
+        </div>
+
+        <!-- Pointer Indicators - Outside wheel so they don't rotate -->
+        <div class="pointer-indicator pointer-main">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="pointer-indicator pointer-secondary">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="content-wrapper">
+          <h1 class="content-title">Asset Management System</h1>
+          <p class="content-description">
+            A comprehensive system for tracking and managing fixed and movable
+            assets, from procurement and usage to depreciation or disposal.
+          </p>
+
+          <div class="features-section">
+            <h2 class="features-title">Key features</h2>
+            <div class="features-list">
+              <p class="feature-item">
+                1. Smart Tagging (QR/RFID) - 2. Location Tracking - 3.
+                Maintenance History Log
+              </p>
+              <p class="feature-item">
+                4. Personnel Custody - 5. AI Predictive Maintenance - 6.
+                Automated Depreciation
+              </p>
             </div>
+          </div>
+
+          <div class="buttons-container">
+            <button class="btn btn-primary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M10 8L30 20L10 32V8Z" fill="#25363C" />
+              </svg>
+              <span>Watch Demo</span>
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5V23"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L13 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L27 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Download PDf</span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Navigation Dots -->
-        <div class="nav-dots">
-            <div class="dot" data-section="pmo"></div>
-            <div class="dot" data-section="correspondence"></div>
-            <div class="dot active" data-section="asset"></div>
-            <div class="dot" data-section="operations"></div>
-            <div class="dot" data-section="archive"></div>
-            <div class="dot-spacer"></div>
-            <div class="chatbot-icon">
-                <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot">
-            </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="nav-dots">
+        <div class="dot" data-section="pmo"></div>
+        <div class="dot" data-section="correspondence"></div>
+        <div class="dot active" data-section="asset"></div>
+        <div class="dot" data-section="operations"></div>
+        <div class="dot" data-section="archive"></div>
+        <div class="dot-spacer"></div>
+        <div class="chatbot-icon">
+          <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot" />
         </div>
-        
-        <!-- Chatbot -->
-        <div class="chatbot-bubble">
-            <img src="assets/Hi.png" alt="Hi" class="hi-bubble">
-            <img src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif" alt="Chatbot" class="chatbot-image">
-            <div class="chatbot-message">HI!</div>
-        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="chatbot-bubble">
+        <img src="assets/Hi.png" alt="Hi" class="hi-bubble" />
+        <img
+          src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif"
+          alt="Chatbot"
+          class="chatbot-image"
+        />
+        <div class="chatbot-message">HI!</div>
+      </div>
     </section>
 
     <!-- Section 4: OPERATIONS & MAINTENANCE -->
-    <section class="content-section" id="section-operations" data-section="operations">
-        <div class="background-overlay"></div>
-        <img src="assets/Operations & Maintenance (O&M) System.jpg" alt="Background" class="background-image">
-        
-        <!-- Wheel Container -->
-        <div class="wheel-container">
-            <div class="wheel" id="wheel4">
-                <!-- Pie Chart Segments using divs -->
-                
-                <!-- Segment 1: Operations & Maintenance (0deg to 72deg) - ACTIVE -->
-                <div class="pie-segment segment-1-pie active" data-target="operations">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Operations &<br>Maintenance</span>
-                </div>
-                
-                <!-- Segment 2: Asset Management (72deg to 144deg) -->
-                <div class="pie-segment segment-2-pie" data-target="asset">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Asset<br>Management</span>
-                </div>
-                
-                <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
-                <div class="pie-segment segment-3-pie" data-target="correspondence">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Correspondence<br>Management</span>
-                </div>
-                
-                <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
-                <div class="pie-segment segment-4-pie" data-target="pmo">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Qarar<br>PMO</span>
-                </div>
-                
-                <!-- Segment 5: Document Archiving (288deg to 360deg) -->
-                <div class="pie-segment segment-5-pie" data-target="archive">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Document<br>Archiving & DMS</span>
-                </div>
+    <section
+      class="content-section"
+      id="section-operations"
+      data-section="operations"
+    >
+      <div class="background-overlay"></div>
+      <img
+        src="assets/Operations & Maintenance (O&M) System.jpg"
+        alt="Background"
+        class="background-image"
+      />
+
+      <!-- Wheel Container -->
+      <div class="wheel-container">
+        <div class="wheel" id="wheel4">
+          <!-- Pie Chart Segments using divs -->
+
+          <!-- Segment 1: Operations & Maintenance (0deg to 72deg) - ACTIVE -->
+          <div
+            class="pie-segment segment-1-pie active"
+            data-target="operations"
+          >
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Center Circle - Outside wheel to avoid mask -->
-            <div class="wheel-center">
-                <img src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif" alt="Center Animation" class="center-gif">
+            <span class="segment-text">Operations &<br />Maintenance</span>
+          </div>
+
+          <!-- Segment 2: Asset Management (72deg to 144deg) -->
+          <div class="pie-segment segment-2-pie" data-target="asset">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="wheel-center-text">
-                <div class="text-digital">Digital</div>
-                <div class="text-transformation">Transformation</div>
-                <div class="text-wheel">WHEEL</div>
+            <span class="segment-text">Asset<br />Management</span>
+          </div>
+
+          <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
+          <div class="pie-segment segment-3-pie" data-target="correspondence">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Pointer Indicators - Outside wheel so they don't rotate -->
-            <div class="pointer-indicator pointer-main">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Correspondence<br />Management</span>
+          </div>
+
+          <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
+          <div class="pie-segment segment-4-pie" data-target="pmo">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="pointer-indicator pointer-secondary">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Qarar<br />PMO</span>
+          </div>
+
+          <!-- Segment 5: Document Archiving (288deg to 360deg) -->
+          <div class="pie-segment segment-5-pie" data-target="archive">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
+            <span class="segment-text">Document<br />Archiving & DMS</span>
+          </div>
         </div>
-        
-        <!-- Content Area -->
-        <div class="content-area">
-            <div class="content-wrapper">
-                <h1 class="content-title">Operations & Maintenance (O&M) System</h1>
-                <p class="content-description">
-                    A technical solution aimed at automating preventive and corrective maintenance, ensuring the sustainability of assets and equipment with high efficiency and minimal cost.
-                </p>
-                
-                <div class="features-section">
-                    <h2 class="features-title">Key features</h2>
-                    <div class="features-list">
-                        <p class="feature-item">1. Work Order Management  -  2. Preventive Maintenance  -  3. Field Mobile App</p>
-                        <p class="feature-item">4. SLA Management  -  5. AI Fault Diagnosis  -  6. Spare Parts Inventory</p>
-                    </div>
-                </div>
-                
-                <div class="buttons-container">
-                    <button class="btn btn-primary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M10 8L30 20L10 32V8Z" fill="#25363C"/>
-                        </svg>
-                        <span>Watch Demo</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M20 5V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L13 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L27 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Download PDf</span>
-                    </button>
-                </div>
+
+        <!-- Center Circle - Outside wheel to avoid mask -->
+        <div class="wheel-center">
+          <img
+            src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif"
+            alt="Center Animation"
+            class="center-gif"
+          />
+        </div>
+        <div class="wheel-center-text">
+          <div class="text-digital">Digital</div>
+          <div class="text-transformation">Transformation</div>
+          <div class="text-wheel">WHEEL</div>
+        </div>
+
+        <!-- Pointer Indicators - Outside wheel so they don't rotate -->
+        <div class="pointer-indicator pointer-main">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="pointer-indicator pointer-secondary">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="content-wrapper">
+          <h1 class="content-title">Operations & Maintenance (O&M) System</h1>
+          <p class="content-description">
+            A technical solution aimed at automating preventive and corrective
+            maintenance, ensuring the sustainability of assets and equipment
+            with high efficiency and minimal cost.
+          </p>
+
+          <div class="features-section">
+            <h2 class="features-title">Key features</h2>
+            <div class="features-list">
+              <p class="feature-item">
+                1. Work Order Management - 2. Preventive Maintenance - 3. Field
+                Mobile App
+              </p>
+              <p class="feature-item">
+                4. SLA Management - 5. AI Fault Diagnosis - 6. Spare Parts
+                Inventory
+              </p>
             </div>
+          </div>
+
+          <div class="buttons-container">
+            <button class="btn btn-primary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M10 8L30 20L10 32V8Z" fill="#25363C" />
+              </svg>
+              <span>Watch Demo</span>
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5V23"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L13 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L27 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Download PDf</span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Navigation Dots -->
-        <div class="nav-dots">
-            <div class="dot" data-section="pmo"></div>
-            <div class="dot" data-section="correspondence"></div>
-            <div class="dot" data-section="asset"></div>
-            <div class="dot active" data-section="operations"></div>
-            <div class="dot" data-section="archive"></div>
-            <div class="dot-spacer"></div>
-            <div class="chatbot-icon">
-                <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot">
-            </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="nav-dots">
+        <div class="dot" data-section="pmo"></div>
+        <div class="dot" data-section="correspondence"></div>
+        <div class="dot" data-section="asset"></div>
+        <div class="dot active" data-section="operations"></div>
+        <div class="dot" data-section="archive"></div>
+        <div class="dot-spacer"></div>
+        <div class="chatbot-icon">
+          <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot" />
         </div>
-        
-        <!-- Chatbot -->
-        <div class="chatbot-bubble">
-            <img src="assets/Hi.png" alt="Hi" class="hi-bubble">
-            <img src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif" alt="Chatbot" class="chatbot-image">
-            <div class="chatbot-message">HI!</div>
-        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="chatbot-bubble">
+        <img src="assets/Hi.png" alt="Hi" class="hi-bubble" />
+        <img
+          src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif"
+          alt="Chatbot"
+          class="chatbot-image"
+        />
+        <div class="chatbot-message">HI!</div>
+      </div>
     </section>
 
     <!-- Section 5: DOCUMENT ARCHIVING & DMS -->
-    <section class="content-section" id="section-archive" data-section="archive">
-        <div class="background-overlay"></div>
-        <img src="assets/Document Archiving & DMS.jpg" alt="Background" class="background-image">
-        
-        <!-- Wheel Container -->
-        <div class="wheel-container">
-            <div class="wheel" id="wheel5">
-                <!-- Pie Chart Segments using divs -->
-                
-                <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
-                <div class="pie-segment segment-1-pie" data-target="operations">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Operations &<br>Maintenance</span>
-                </div>
-                
-                <!-- Segment 2: Asset Management (72deg to 144deg) -->
-                <div class="pie-segment segment-2-pie" data-target="asset">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Asset<br>Management</span>
-                </div>
-                
-                <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
-                <div class="pie-segment segment-3-pie" data-target="correspondence">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Correspondence<br>Management</span>
-                </div>
-                
-                <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
-                <div class="pie-segment segment-4-pie" data-target="pmo">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Qarar<br>PMO</span>
-                </div>
-                
-                <!-- Segment 5: Document Archiving (288deg to 360deg) - ACTIVE -->
-                <div class="pie-segment segment-5-pie active" data-target="archive">
-                    <div class="segment-cover1">
-                        <div class="segment-cover2">
-                            <div class="segment-content"></div>
-                        </div>
-                    </div>
-                    <span class="segment-text">Document<br>Archiving & DMS</span>
-                </div>
+    <section
+      class="content-section"
+      id="section-archive"
+      data-section="archive"
+    >
+      <div class="background-overlay"></div>
+      <img
+        src="assets/Document Archiving & DMS.jpg"
+        alt="Background"
+        class="background-image"
+      />
+
+      <!-- Wheel Container -->
+      <div class="wheel-container">
+        <div class="wheel" id="wheel5">
+          <!-- Pie Chart Segments using divs -->
+
+          <!-- Segment 1: Operations & Maintenance (0deg to 72deg) -->
+          <div class="pie-segment segment-1-pie" data-target="operations">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Center Circle - Outside wheel to avoid mask -->
-            <div class="wheel-center">
-                <img src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif" alt="Center Animation" class="center-gif">
+            <span class="segment-text">Operations &<br />Maintenance</span>
+          </div>
+
+          <!-- Segment 2: Asset Management (72deg to 144deg) -->
+          <div class="pie-segment segment-2-pie" data-target="asset">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="wheel-center-text">
-                <div class="text-digital">Digital</div>
-                <div class="text-transformation">Transformation</div>
-                <div class="text-wheel">WHEEL</div>
+            <span class="segment-text">Asset<br />Management</span>
+          </div>
+
+          <!-- Segment 3: Correspondence Management (144deg to 216deg) -->
+          <div class="pie-segment segment-3-pie" data-target="correspondence">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            
-            <!-- Pointer Indicators - Outside wheel so they don't rotate -->
-            <div class="pointer-indicator pointer-main">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Correspondence<br />Management</span>
+          </div>
+
+          <!-- Segment 4: Qarar PMO (216deg to 288deg) -->
+          <div class="pie-segment segment-4-pie" data-target="pmo">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
-            <div class="pointer-indicator pointer-secondary">
-                <i class="fas fa-chevron-right"></i>
+            <span class="segment-text">Qarar<br />PMO</span>
+          </div>
+
+          <!-- Segment 5: Document Archiving (288deg to 360deg) - ACTIVE -->
+          <div class="pie-segment segment-5-pie active" data-target="archive">
+            <div class="segment-cover1">
+              <div class="segment-cover2">
+                <div class="segment-content"></div>
+              </div>
             </div>
+            <span class="segment-text">Document<br />Archiving & DMS</span>
+          </div>
         </div>
-        
-        <!-- Content Area -->
-        <div class="content-area">
-            <div class="content-wrapper">
-                <h1 class="content-title">Document Archiving & DMS</h1>
-                <p class="content-description">
-                    A central digital repository aimed at converting paper archives into an organized electronic database with advanced search tools and strict access permissions.
-                </p>
-                
-                <div class="features-section">
-                    <h2 class="features-title">Key features</h2>
-                    <div class="features-list">
-                        <p class="feature-item">1. Hierarchical Filing  -  2. Smart Search (OCR)  -  3. Version Control</p>
-                        <p class="feature-item">4. Granular Access Permissions  -  5. AI Semantic Search  -  6. System Integration</p>
-                    </div>
-                </div>
-                
-                <div class="buttons-container">
-                    <button class="btn btn-primary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M10 8L30 20L10 32V8Z" fill="#25363C"/>
-                        </svg>
-                        <span>Watch Demo</span>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                            <path d="M20 5V23" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L13 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M20 23L27 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Download PDf</span>
-                    </button>
-                </div>
+
+        <!-- Center Circle - Outside wheel to avoid mask -->
+        <div class="wheel-center">
+          <img
+            src="assets/5e25ebd52434e35e5b0f06bc54f9f97e 1.gif"
+            alt="Center Animation"
+            class="center-gif"
+          />
+        </div>
+        <div class="wheel-center-text">
+          <div class="text-digital">Digital</div>
+          <div class="text-transformation">Transformation</div>
+          <div class="text-wheel">WHEEL</div>
+        </div>
+
+        <!-- Pointer Indicators - Outside wheel so they don't rotate -->
+        <div class="pointer-indicator pointer-main">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="pointer-indicator pointer-secondary">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        <div class="content-wrapper">
+          <h1 class="content-title">Document Archiving & DMS</h1>
+          <p class="content-description">
+            A central digital repository aimed at converting paper archives into
+            an organized electronic database with advanced search tools and
+            strict access permissions.
+          </p>
+
+          <div class="features-section">
+            <h2 class="features-title">Key features</h2>
+            <div class="features-list">
+              <p class="feature-item">
+                1. Hierarchical Filing - 2. Smart Search (OCR) - 3. Version
+                Control
+              </p>
+              <p class="feature-item">
+                4. Granular Access Permissions - 5. AI Semantic Search - 6.
+                System Integration
+              </p>
             </div>
+          </div>
+
+          <div class="buttons-container">
+            <button class="btn btn-primary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M10 8L30 20L10 32V8Z" fill="#25363C" />
+              </svg>
+              <span>Watch Demo</span>
+            </button>
+            <button class="btn btn-secondary">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path
+                  d="M20 5V23"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L13 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M20 23L27 16"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 28V32C8 33.1046 8.89543 34 10 34H30C31.1046 34 32 33.1046 32 32V28"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span>Download PDf</span>
+            </button>
+          </div>
         </div>
-        
-        <!-- Navigation Dots -->
-        <div class="nav-dots">
-            <div class="dot" data-section="pmo"></div>
-            <div class="dot" data-section="correspondence"></div>
-            <div class="dot" data-section="asset"></div>
-            <div class="dot" data-section="operations"></div>
-            <div class="dot active" data-section="archive"></div>
-            <div class="dot-spacer"></div>
-            <div class="chatbot-icon">
-                <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot">
-            </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="nav-dots">
+        <div class="dot" data-section="pmo"></div>
+        <div class="dot" data-section="correspondence"></div>
+        <div class="dot" data-section="asset"></div>
+        <div class="dot" data-section="operations"></div>
+        <div class="dot active" data-section="archive"></div>
+        <div class="dot-spacer"></div>
+        <div class="chatbot-icon">
+          <img src="assets/I0hZfEfflf-ezgif.com-gif-maker.gif" alt="Chatbot" />
         </div>
-        
-        <!-- Chatbot -->
-        <div class="chatbot-bubble">
-            <img src="assets/Hi.png" alt="Hi" class="hi-bubble">
-            <img src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif" alt="Chatbot" class="chatbot-image">
-            <div class="chatbot-message">HI!</div>
-        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="chatbot-bubble">
+        <img src="assets/Hi.png" alt="Hi" class="hi-bubble" />
+        <img
+          src="assets/a89add_3d73f7e43cff4f37bdf0af4772ef6595~mv2.gif"
+          alt="Chatbot"
+          class="chatbot-image"
+        />
+        <div class="chatbot-message">HI!</div>
+      </div>
     </section>
 
     <script src="script.js?v=25"></script>
-</body>
+  </body>
 </html>
